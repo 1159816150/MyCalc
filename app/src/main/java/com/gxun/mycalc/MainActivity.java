@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.gxun.mycalc.databinding.ActivityMainBinding;
 
@@ -217,6 +218,12 @@ public class MainActivity extends AppCompatActivity {
                     calculation = calculation.substring(0, calculation.length() - 1);
                 }
                 binding.textViewCalculation.setText(calculation);
+            }
+        });
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"未设置功能", Toast.LENGTH_SHORT).show();
             }
         });
     }
