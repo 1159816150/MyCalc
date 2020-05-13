@@ -70,11 +70,20 @@ public class ReversePolishMultiCalc {
      * @return
      */
     public static boolean isNumber(String s) {
-        Pattern p = Pattern.compile("[0-9]*");
-        Matcher m = p.matcher(s);
-        if(m.matches() ){
-          return true;
-        }else return false;
+//         就是判断是否为整数(正负)
+        Pattern pattern =
+                Pattern.compile("^\\d+$|-\\d+$");
+        //判断是否为小数(正负)
+        Pattern pattern2 =
+                Pattern.compile("\\d+\\.\\d+$|-\\d+\\.\\d+$");
+        return (pattern.matcher(s).matches()
+                || pattern2.matcher(s).matches());
+
+//        Pattern p = Pattern.compile("[0-9]*");
+//        Matcher m = p.matcher(s);
+//        if(m.matches() ){
+//          return true;
+//        }else return false;
     }
 
     /**
